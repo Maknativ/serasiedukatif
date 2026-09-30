@@ -1,0 +1,646 @@
+﻿:root {
+    --primary-color: #FF9A8B; /* Soft Red/Orange */
+    --secondary-color: #FFC0CB; /* Pink */
+    --accent-color: #8FD3FE; /* Light Blue */
+    --bg-color: #FDF5E6; /* Old Lace / Warm white */
+    --text-color: #333333;
+    --card-bg: #FFFFFF;
+    --green-accent: #98FB98; /* Pale Green */
+    --yellow-accent: #FFFACD; /* Lemon Chiffon */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Fredoka One', cursive;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Foto tugu hanya di beranda. Menu lain tetap latar pink. */
+header.beranda-bg {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.12)),
+        url("beranda-bg.jpg") center 45% / cover no-repeat;
+}
+
+header.beranda-bg .logo-container p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.school-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px; /* Optional, gives a slight rounded corner if the images are square */
+    background-color: white; /* Adds a nice white background just in case the images are transparent/dark */
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container h1 {
+    font-size: 2.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+}
+
+.serasi-logo {
+    font-size: 4rem !important; /* Makes it much bigger */
+    font-family: 'Fredoka One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    -webkit-text-stroke: 3px white;
+    text-shadow: 4px 6px 0px rgba(0,0,0,0.15);
+    margin: 15px 0 !important;
+}
+
+.serasi-logo span {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.serasi-logo span:hover {
+    transform: scale(1.3) rotate(0deg) !important;
+}
+
+.logo-container p {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background-color: white;
+    border: 3px solid transparent;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: var(--primary-color);
+    box-shadow: 0 4px 0px rgba(0,0,0,0.1);
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px rgba(0,0,0,0.1);
+}
+
+.nav-btn.active {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-banner {
+    text-align: center;
+    background-color: var(--yellow-accent);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.welcome-banner h2 {
+    color: #FF7F50;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: var(--green-accent);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.section-header h2 {
+    color: #2E8B57;
+    font-size: 2rem;
+}
+
+.grid-container, .info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card, .story-card, .action-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tombol selalu sejajar di bagian bawah kartu */
+.story-card .action-btn, .action-card .action-btn {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.story-card h3, .action-card h3 {
+    margin-bottom: 15px;
+}
+
+.card:hover, .story-card:hover, .action-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    border-color: var(--accent-color);
+}
+
+.card h3, .story-card h3, .action-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.card-img {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #6CAEE0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 5% auto; /* Kurangi margin atas agar lebih ke tengah atas */
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px; /* Diperbesar agar teks lebih lega */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: zoomIn 0.3s;
+    max-height: 90vh; /* Agar tidak melewati tinggi layar */
+    overflow-y: auto; /* Agar isi modal bisa discroll jika terlalu panjang */
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+#modal-title {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-right: 30px;
+}
+
+.audio-player {
+    margin: 20px 0;
+    background-color: var(--yellow-accent);
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    scroll-behavior: smooth;
+    /* Optional: Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.image-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-img-item {
+    height: 320px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 15px;
+    flex-shrink: 0;
+    object-fit: contain;
+    background-color: white;
+    border: 3px solid var(--accent-color);
+}
+
+.story-text {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    text-align: justify;
+    line-height: 1.8;
+}
+
+#modal-text {
+    white-space: pre-line; /* jaga pemisah paragraf & daftar dari teks asli */
+}
+
+/* === Konten tambahan di modal (Pojok Aksi) === */
+.extra-box {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.extra-title {
+    color: #2E8B57;
+    margin: 15px 0 10px;
+    font-size: 1.3rem;
+}
+
+.extra-title:first-child {
+    margin-top: 0;
+}
+
+.extra-hint {
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.extra-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.extra-item {
+    background-color: var(--yellow-accent);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.extra-item:hover {
+    border-color: var(--accent-color);
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.download-btn {
+    display: inline-block;
+    width: auto;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.journal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.journal-label {
+    font-weight: 700;
+    color: #D2691E;
+    margin-top: 8px;
+}
+
+.journal-form input,
+.journal-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    background-color: #fffdf7;
+    resize: vertical;
+}
+
+.journal-form input:focus,
+.journal-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.journal-status {
+    min-height: 1.4em;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.journal-status.ok { color: #2E8B57; }
+.journal-status.warn { color: #dc3545; }
+
+.journal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.journal-entry {
+    background-color: var(--yellow-accent);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: left;
+}
+
+.journal-entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.journal-entry h4 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+}
+
+.journal-date {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.journal-entry p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.journal-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.mini-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mini-btn.danger {
+    background-color: #f28b82;
+}
+
+.mini-btn:hover {
+    filter: brightness(0.95);
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.audio-player p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #D2691E;
+}
+
+audio {
+    width: 100%;
+    outline: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    header { position: static; padding: 15px 10px; }
+    .header-logo { height: 50px; }
+    .school-logos { gap: 12px; margin-bottom: 8px; }
+    .logo-container h1 { font-size: 2rem; }
+    .serasi-logo { font-size: 2.6rem !important; letter-spacing: 3px; margin: 8px 0 !important; }
+    .logo-container p { font-size: 0.95rem; }
+    .nav-btn { padding: 8px 15px; font-size: 0.9rem; }
+    .modal-content { width: 95%; padding: 20px; margin: 4% auto; }
+    .modal-img-item { height: 240px; }
+    .quiz-result-container .action-btn { margin-top: 10px; }
+}
+
+
+
+/* === KUIS INTERAKTIF === */
+.quiz-content {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border: 4px solid #4a90e2;
+    border-radius: 20px;
+    max-width: 600px;
+}
+.quiz-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #4a90e2;
+    padding-bottom: 10px;
+}
+.quiz-header h2 {
+    color: #4a90e2;
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+.quiz-progress {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: bold;
+    background: #e6f7ff;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 15px;
+}
+.quiz-question-text {
+    font-size: 1.3rem;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.quiz-options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.quiz-option {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    color: #444;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.quiz-option:hover {
+    border-color: #4a90e2;
+    background: #f4fbff;
+    transform: translateY(-2px);
+}
+.quiz-option.correct {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+.quiz-option.wrong {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+.quiz-footer {
+    text-align: right;
+    margin-top: 25px;
+}
+.quiz-result-container {
+    text-align: center;
+    padding: 20px;
+}
+.quiz-result-score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4a90e2;
+    margin: 20px 0;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SERASI - Sastra Edukatif Rakyat Anak Sragen Inspiratif. Media belajar legenda, sejarah, dan kuliner khas Sragen untuk siswa SD Negeri 1 Pare Mondokan Sragen.">
+    <title>SERASI - Sastra Edukatif Anak Sragen</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="beranda-bg">
+        <div class="school-logos">
+            <img src="Logo Tut Wuri Handayani.jpg" alt="Logo Tut Wuri Handayani" class="header-logo">
+            <img src="Logo SD Negeri 1 Pare Mondokan Sragen.jpeg" alt="Logo SD Negeri 1 Pare Mondokan Sragen" class="header-logo">
+            <img src="Logo Kabupaten Sragen.jpg" alt="Logo Kabupaten Sragen" class="header-logo">
+        </div>
+        <div class="logo-container">
+            <h1 class="bounce serasi-logo">
+                <span style="color: #FF5722; transform: rotate(-5deg); display: inline-block;">S</span><span style="color: #4CAF50; transform: rotate(5deg); display: inline-block;">E</span><span style="color: #2196F3; transform: rotate(-3deg); display: inline-block;">R</span><span style="color: #FFEB3B; transform: rotate(4deg); display: inline-block;">A</span><span style="color: #9C27B0; transform: rotate(-6deg); display: inline-block;">S</span><span style="color: #E91E63; transform: rotate(5deg); display: inline-block;">I</span>
+            </h1>
+            <p>Sastra Edukatif Rakyat Anak Sragen Inspiratif</p>
+        </div>
+        <nav>
+            <button class="nav-btn active" onclick="showSection('beranda', this)">🏠 Beranda</button>
+            <button class="nav-btn" onclick="showSection('menu-a', this)">🗺️ Lorong Waktu</button>
+            <button class="nav-btn" onclick="showSection('menu-b', this)">🍽️ Jelajah Rasa</button>
+            <button class="nav-btn" onclick="showSection('menu-c', this)">🎨 Pojok Aksi</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Beranda -->
+        <section id="beranda" class="content-section active">
+            <div class="welcome-banner">
+                <h2>Selamat Datang di SERASI! 🎉</h2>
+                <p>Mari belajar sastra, sejarah, dan kekayaan kuliner Sragen dengan cara yang menyenangkan.</p>
+                <img src="serasi_hero_banner.jpg" alt="Ilustrasi Ceria SERASI" class="hero-image">
+            </div>
+            <div class="info-cards">
+                <div class="card" onclick="showSection('menu-a', document.querySelectorAll('.nav-btn')[1])">
+                    <h3>🗺️ Lorong Waktu</h3>
+                    <p>Jelajahi legenda dan sejarah Kabupaten Sragen.</p>
+                </div>
+                <div class="card" onclick="showSection('menu-b', document.querySelectorAll('.nav-btn')[2])">
+                    <h3>🍽️ Jelajah Rasa</h3>
+                    <p>Temukan makanan dan minuman khas Bumi Sukowati.</p>
+                </div>
+                <div class="card" onclick="showSection('menu-c', document.querySelectorAll('.nav-btn')[3])">
+                    <h3>🎨 Pojok Aksi</h3>
+                    <p>Ayo beraksi dan kumpulkan karya hebatmu!</p>
+                </div>
+            </div>
+        </section>
+
+                <!-- Menu A: Lorong Waktu Legenda Sragen -->
+        <section id="menu-a" class="content-section">
+            <div class="section-header">
+                <h2>🗺️ Lorong Waktu Legenda Sragen</h2>
+                <p>Pilih peta di bawah ini untuk membaca dan mendengarkan kisah hebat!</p>
+            </div>
+            <div class="grid-container">
+                <div class="story-card" onclick="openStory('gunung_kemukus')">
+                    <div class="card-img"><img src="1/GK-1.png" alt="Gunung Kemukus" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🌋</div>
+                    <h3>Gunung Kemukus</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('bayanan')">
+                    <div class="card-img"><img src="2/PB-1.png" alt="Bayanan" class="thumbnail" loading="lazy" onerror="this.style.display='none'">♨️</div>
+                    <h3>Air Hangat Bayanan</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('makam_putri_sukowati')">
+                    <div class="card-img"><img src="4/MPS-1.png" alt="Makam Putri Sukowati" class="thumbnail" loading="lazy" onerror="this.style.display='none'">👑</div>
+                    <h3>Makam Putri Sukowati</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('tjandra_birawa')">
+                    <div class="card-img"><img src="5/MCB-1.png" alt="Monumen Tjandra Birawa" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🗡️</div>
+                    <h3>Monumen Tjandra Birawa</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('makam_butuh')">
+                    <div class="card-img"><img src="3/MS-1.png" alt="Makam Butuh" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🕌</div>
+                    <h3>Makam Butuh</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('nyi_ageng_serang')">
+                    <div class="card-img"><img src="6/NAS-1.png" alt="Nyi Ageng Serang" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🛡️</div>
+                    <h3>Nyi Ageng Serang</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('nyi_ageng_srenggi')">
+                    <div class="card-img"><img src="7/NAI-1.png" alt="Nyi Ageng Srenggi" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🏹</div>
+                    <h3>Nyi Ageng Srenggi</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('petilasan_mangkubumi')">
+                    <div class="card-img"><img src="8/PM-1.png" alt="Petilasan Mangkubumi" class="thumbnail" loading="lazy" onerror="this.style.display='none'">📜</div>
+                    <h3>Petilasan Mangkubumi</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('joko_tingkir')">
+                    <div class="card-img"><img src="9/JK-1.png" alt="Joko Tingkir" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🛶</div>
+                    <h3>Joko Tingkir</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('sangiran')">
+                    <div class="card-img"><img src="Sangiran/Sangiran.png" alt="Museum Sangiran" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🦴</div>
+                    <h3>Museum Sangiran</h3>
+                    <button class="action-btn">Mulai Kisah 🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu B: Jelajah Rasa Bumi Sukowati -->
+        <section id="menu-b" class="content-section">
+            <div class="section-header">
+                <h2>🍽️ Jelajah Rasa Bumi Sukowati</h2>
+                <p>Buku resep digital interaktif kuliner khas Sragen.</p>
+            </div>
+            <div class="grid-container">
+                <div class="story-card" onclick="openStory('sego_plontang')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Sega Plenthong.jpg" alt="Sego Plontang" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍱</div>
+                    <h3>Sego Plontang</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('gablok')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Gablok.jpg" alt="Gablok" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🥟</div>
+                    <h3>Gablok</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('balung_kethek')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Balung Kethek.jpg" alt="Balung Kethek" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🦴</div>
+                    <h3>Balung Kethek</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('sate_buntel')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Sate Buntel.jpg" alt="Sate Buntel" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍢</div>
+                    <h3>Sate Buntel</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('nasi_tumpang')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Nasi Tumpang Sragen.jpg" alt="Nasi Tumpang" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍛</div>
+                    <h3>Nasi Tumpang</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('bothok_mercon')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Bothok Mercon.jpg" alt="Bothok Mercon" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🌶️</div>
+                    <h3>Bothok Mercon</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('gatot_kerupuk')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Gatot dan Krupuk Truwolo.jpg" alt="Gatot & Krupuk Trowolo" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍘</div>
+                    <h3>Gatot & Krupuk Trowolo</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('jenang_jadah')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/jenang dan jadah.jpg" alt="Jenang dan Jadah" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍡</div>
+                    <h3>Jenang dan Jadah</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('wajik_krasikan')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Jenang Krasikan.jpg" alt="Wajik Jenang Krasikan" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍮</div>
+                    <h3>Wajik Jenang Krasikan</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('saci')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Saci.jpg" alt="Saci (Sragen Munchies)" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍪</div>
+                    <h3>Saci (Sragen Munchies)</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('walangan')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Walangan.jpg" alt="Walangan" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍠</div>
+                    <h3>Walangan</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('soto_girin')">
+                    <div class="card-img"><img src="Makanan Khas Sragen/Soto Girin.jpg" alt="Soto Girin" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🥣</div>
+                    <h3>Soto Girin</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('wedang_uwuh')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Wedang Uwuh.jpg" alt="Wedang Uwuh" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍵</div>
+                    <h3>Wedang Uwuh</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('dawet_sragen')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Dawet Sragen.jpg" alt="Dawet Sragen" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🥤</div>
+                    <h3>Dawet Sragen</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('wedang_ronde')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Wedang Ronde.jpg" alt="Wedang Ronde" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🥣</div>
+                    <h3>Wedang Ronde</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('bir_pletok')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Bir Pletok.jpg" alt="Bir Pletok" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍹</div>
+                    <h3>Bir Pletok</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('wedang_bajigur')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Wedang Bajigur.jpg" alt="Wedang Bajigur" class="thumbnail" loading="lazy" onerror="this.style.display='none'">☕</div>
+                    <h3>Wedang Bajigur</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('jus_kweni')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Jus Kweni.jpg" alt="Jus Kweni" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🍹</div>
+                    <h3>Jus Kweni</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+                <div class="story-card" onclick="openStory('legen')">
+                    <div class="card-img"><img src="Minuman Khas Sragen/Legen.jpg" alt="Legen" class="thumbnail" loading="lazy" onerror="this.style.display='none'">🥥</div>
+                    <h3>Legen</h3>
+                    <button class="action-btn">Lihat Sajian 🔊</button>
+                </div>
+            </div>
+        </section>
+
+                <!-- Menu C: Pojok Aksi SERASI -->
+        <section id="menu-c" class="content-section">
+            <div class="section-header">
+                <h2>🎨 Pojok Aksi SERASI</h2>
+                <p>Waktunya kamu berkarya dan menjadi bintang!</p>
+            </div>
+            <div class="grid-container">
+                <div class="action-card">
+                    <div class="card-img">🎒</div>
+                    <h3>Ruang Baca & Dengar</h3>
+                    <p>Fasilitas terpadu membaca dan mendengarkan.</p>
+                    <button class="action-btn" onclick="openStory('ruang_baca')">Masuk Ruangan</button>
+                </div>
+                <div class="action-card">
+                    <div class="card-img">🎤</div>
+                    <h3>Misi Jurnalis Cilik</h3>
+                    <p>Unduh lembar misi wawancara.</p>
+                    <button class="action-btn" onclick="openStory('misi_jurnalis')">Unduh Misi 📄</button>
+                </div>
+                <div class="action-card">
+                    <div class="card-img">📓</div>
+                    <h3>Catatan Kulinerku</h3>
+                    <p>Tulis jurnal digital pengalaman kulinermu.</p>
+                    <button class="action-btn" onclick="openStory('catatan_kuliner')">Tulis Catatan</button>
+                </div>
+                <div class="action-card">
+                    <div class="card-img">🏆</div>
+                    <h3>Kuis Interaktif SERASI</h3>
+                    <p>Uji pengetahuanmu dari 30 soal seru!</p>
+                    <button class="action-btn" onclick="startQuiz()">Mulai Kuis 🚀</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <!-- Modal Kuis -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content quiz-content">
+            <span class="close-btn" onclick="closeQuiz()">&times;</span>
+            <div class="quiz-header">
+                <h2 id="quiz-title">Kuis Interaktif SERASI</h2>
+                <div class="quiz-progress">Soal <span id="current-q-num">1</span> dari <span id="total-q-num">10</span></div>
+            </div>
+            <div id="quiz-body">
+                <h3 id="quiz-question" class="quiz-question-text">Pertanyaan akan muncul di sini...</h3>
+                <div id="quiz-options" class="quiz-options-container">
+                    <!-- Opsi jawaban akan di-generate oleh JS -->
+                </div>
+            </div>
+            <div id="quiz-footer" class="quiz-footer">
+                <button id="next-btn" class="action-btn" onclick="nextQuestion()" style="display:none;">Lanjut &raquo;</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal for stories and recipes -->
+    <div id="content-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title" class="modal-header-title">Judul</h2>
+            <div class="modal-body">
+                <!-- Visualisasi Gambar Akan Muncul di Sini (Di atas teks) -->
+                <div id="modal-image-gallery" class="image-gallery"></div>
+                
+                <!-- Audio Player -->
+                <div class="audio-player">
+                    <p>🔊 Dengarkan Cerita:</p>
+                    <audio id="story-audio" controls preload="metadata">
+                        Browser Anda tidak mendukung elemen audio.
+                    </audio>
+                </div>
+
+                <!-- Teks Narasi -->
+                <div id="modal-text-container" class="story-text">
+                    <p id="modal-text">Teks cerita akan muncul di sini.</p>
+                </div>
+
+                <!-- Konten interaktif tambahan (Ruang Baca, Unduh Misi, Jurnal Kuliner) -->
+                <div id="modal-extra"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SERASI - Dirancang untuk SDN 1 Pare Mondokan Sragen</p>
+    </footer>
+
+    <script src="script.js?v=4"></script>
+</body>
+</html>
+
